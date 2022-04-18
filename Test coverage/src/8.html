@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>C:\Users\dimas\RiderProjects\test-task-figures\FigureTests\CircleTests.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using System;
+using Figures;
+using Xunit;
+
+namespace FigureTests; 
+
+public class CircleTests {
+    [Fact]
+    public void NegativeValueExceptionTest() {
+        Assert.Throws&lt;ArgumentException&gt;(() =&gt; new Circle(-1));
+    }
+    
+    [Fact]
+    public void ZeroValueExceptionTest() {
+        Assert.Throws&lt;ArgumentException&gt;(() =&gt; new Circle(0));
+    }
+
+    [Fact]
+    public void PositiveInfinityTest() {
+        var c = new Circle(double.MaxValue);
+        Assert.Equal(double.PositiveInfinity, c.Square);
+    }
+
+    [Fact]
+    public void SquareIntTest() {
+        var c = new Circle(10);
+        Assert.Equal(314.16, Math.Round(c.Square, 2));
+    }
+
+    [Fact]
+    public void SquareDoubleTest() {
+        var c = new Circle(5.3);
+        Assert.Equal(88.25, Math.Round(c.Square, 2));
+    }
+
+    [Fact]
+    public void DefaultConstructorTest() {
+        var c = new Circle();
+        Assert.Equal(1, c.Radius);
+        Assert.Equal(3.14, Math.Round(c.Square, 2));
+    }
+}
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[9,46,9,47,1],[10,9,10,48,1],[10,48,10,62,1],[10,62,10,64,1],[11,5,11,6,1],[14,42,14,43,1],[15,9,15,48,1],[15,48,15,61,1],[15,61,15,63,1],[16,5,16,6,1],[19,40,19,41,1],[20,9,20,45,1],[21,9,21,57,1],[22,5,22,6,1],[25,33,25,34,1],[26,9,26,32,1],[27,9,27,55,1],[28,5,28,6,1],[31,36,31,37,1],[32,9,32,33,1],[33,9,33,54,1],[34,5,34,6,1],[37,42,37,43,1],[38,9,38,30,1],[39,9,39,35,1],[40,9,40,53,1],[41,5,41,6,1]]);
+    </script>
+  </body>
+</html>
